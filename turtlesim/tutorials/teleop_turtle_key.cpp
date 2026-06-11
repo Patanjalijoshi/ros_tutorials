@@ -189,11 +189,11 @@ class TeleopTurtle final
 public:
   TeleopTurtle()
   {
-    nh_ = rclcpp::Node::make_shared("teleop_turtle");
+    nh_ = rclcpp::Node::make_shared("teleop_turtle", "turtle1");
     nh_->declare_parameter("scale_angular", 2.0);
     nh_->declare_parameter("scale_linear", 2.0);
 
-    twist_pub_ = nh_->create_publisher<geometry_msgs::msg::Twist>("turtle1/cmd_vel", 1);
+    twist_pub_ = nh_->create_publisher<geometry_msgs::msg::Twist>("cmd_vel", 1);
     rotate_absolute_client_ = rclcpp_action::create_client<turtlesim::action::RotateAbsolute>(nh_, "rotate_absolute");
   }
 
