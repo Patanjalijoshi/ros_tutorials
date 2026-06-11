@@ -194,7 +194,7 @@ public:
     nh_->declare_parameter("scale_linear", 2.0);
 
     twist_pub_ = nh_->create_publisher<geometry_msgs::msg::Twist>("turtle1/cmd_vel", 1);
-    rotate_absolute_client_ = rclcpp_action::create_client<turtlesim::action::RotateAbsolute>(nh_, "turtle1/rotate_absolute");
+    rotate_absolute_client_ = rclcpp_action::create_client<turtlesim::action::RotateAbsolute>(nh_, "rotate_absolute");
   }
 
   int keyLoop()
